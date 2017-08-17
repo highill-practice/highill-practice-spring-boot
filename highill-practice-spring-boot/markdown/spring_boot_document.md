@@ -50,4 +50,34 @@ Content-Type:  application/json;charset=UTF-8
 
 ```  
 
+# 部署  
+```  
+$ scp target/highill-practice-spring-boot-0.0.0.1-SNAPSHOT.jar root@192.168.1.108:/var/highill-practice-spring-boot/
+
+$ cd /var/highill-practice-spring-boot/
+$ sudo cp highill-practice-spring-boot-0.0.0.1-SNAPSHOT.jar highill-practice-spring-boot-10001.jar
+
+$ sudo vim highill-practice-spring-boot-10001.conf
+JAVA_OPTS="-Xmx128M -Dfile.encoding=utf-8 -Djava.security.egd=file:/dev/./urandom -Dspring.application.name=highill-practice-spring-boot-10001 -Dserver.port=10001"
+
+
+
+
+$ sudo chmod +x highill-practice-spring-boot-10001.jar
+$ sudo ln -s /var/highill-practice-spring-boot/highill-practice-spring-boot-10001.jar /etc/init.d/highill-practice-spring-boot-10001
+
+$ sudo service highill-practice-spring-boot-10001 start
+
+
+-- logs 
+$ sudo tail -n 500 -f /root/logs/highill-practicepring-boot-10001/highill-practice-spring-boot-10001.log
+$ tail -n 500 -f /var/log/highill-practice-spring-boot-10001.log
+
+$ curl "http://127.0.0.1:10001/practice/normal?name=MyName&info=GoodMessage"
+
+
+```  
+
+
+
 

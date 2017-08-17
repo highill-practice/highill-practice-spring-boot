@@ -1,4 +1,14 @@
 
+spring:
+    application:
+        name: highill-practice-spring-boot
+
 server:
     port: 10001
     
+    
+logging:
+    level: INFO
+    file: ${user.home}/logs/${spring.application.name}/${spring.application.name}.log
+    
+        

@@ -27,8 +27,10 @@ public class PracticeNameInfoController {
 	private NameInfoService nameInfoService;
 
 	@RequestMapping(value = "/practice/normal")
-	public NameInfoResponse practiceNormal(@RequestParam(name = "name", required = true) String name,
-	        @RequestParam(name = "info", required = true) String info, HttpServletRequest httpRequest) {
+	public NameInfoResponse practiceNormal(
+			@RequestParam(name = "name", required = true) String name,
+	        @RequestParam(name = "info", required = true) String info, 
+	        HttpServletRequest httpRequest) {
 		long requestId = RequestIdTool.requestId();
 		log.info("-----practiceNormal method:{} requestId:{} name:{} info:{} ", httpRequest.getMethod(), requestId, name, info);
 		
