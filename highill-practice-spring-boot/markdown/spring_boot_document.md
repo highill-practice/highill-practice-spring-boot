@@ -11,6 +11,8 @@ http://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-t
 Excluding resources  
 /META-INF/maven, /META-INF/resources ,/resources ,/static ,/public or /templates  
 
+https://docs.spring.io/spring/docs/4.3.10.RELEASE/spring-framework-reference/htmlsingle/#mvc-config  
+
 
 
 # 常用注解  
